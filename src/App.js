@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-undef */
 import React from 'react';
 import {connect} from 'react-redux';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
@@ -44,7 +46,11 @@ class App extends React.Component {
     return (
       <BrowserRouter>
         <MainLayout>
-          <Switch>
+          <AnimatedSwitch
+            atEnter={{ opacity: 1, top:200}}
+            atLeave={{ opacity: 0, top: 0 }}
+            atActive={{ opacity: 1, top:200}}
+            className={styles.switchWrapper}>
             <Route exact path='/' component={Home} />
             <Route exact path='/trips' component={Trips} />
             {/* TODO - add more routes for other views */}
@@ -54,7 +60,7 @@ class App extends React.Component {
             <Route exact path='/country/:id' component={CountryContainer} />
             <Route exact path='/info' component={Info} />
             <Route path='*' component={NotFound} />
-          </Switch>
+          </AnimatedSwitch>
         </MainLayout>
       </BrowserRouter>
     );
