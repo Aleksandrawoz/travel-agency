@@ -11,6 +11,7 @@ const Hero = ({variant = '', titleText, imageSrc, ...otherProps}) => (
       <HappyHourAd title="Happy Hour" promoDescription="Promo till 13:00!" />
     </div>
   </div>
+
 );
 
 Hero.propTypes = {
