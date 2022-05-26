@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from'prop-types';
-import styles from './HappyHoursAd.module.scss';
+import styles from './HappyHourAd.module.scss';
 
 class HappyHourAd extends React.Component {
   constructor(){
@@ -21,7 +21,7 @@ class HappyHourAd extends React.Component {
     let{title, promoDescription} = this.props;
     return(
       <div className={styles.component}>
-        <HappyHourAd/>
+        
         <h3 className={styles.title}>{title}</h3>
         <div className={styles.promoDescription}>{this.getCountdownTime() > 23*60*60 ? promoDescription:(this.getCountdownTime())}</div>
       </div>
